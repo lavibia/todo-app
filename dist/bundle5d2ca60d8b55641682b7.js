@@ -1,4 +1,9 @@
-console.log('test')
+/******/ (() => { // webpackBootstrap
+var __webpack_exports__ = {};
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+console.log('test');
 /* 
 
 Project Management: Functions to add, edit, and delete projects. This is crucial for organizing tasks.
@@ -145,3 +150,6 @@ module.exports = {
 
 
 */
+/******/ })()
+;
+//# sourceMappingURL=bundle5d2ca60d8b55641682b7.js.map
