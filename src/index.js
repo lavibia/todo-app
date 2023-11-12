@@ -1,7 +1,24 @@
-console.log('test')
-/* 
+import './styles/style.css';
+import './assets/home.png';
+import './assets/calendar.png';
+import './assets/projects.png';
+import './assets/add.png';
+import './assets/about.png';
+import home from './home.js';
 
+console.log('test')
+
+setTimeout(function() {
+  document.getElementById('loading').style.display = 'none';
+}, 3000);
+
+home();
+/*
 Project Management: Functions to add, edit, and delete projects. This is crucial for organizing tasks.
+
+
+
+
 
 Task Management: Functions for adding, editing, and deleting tasks, along with filtering tasks by date, priority.
 

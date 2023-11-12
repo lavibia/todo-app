@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Poppins:ital,wght@0,400;1,800&display=swap');
+:root {
+    box-sizing: border-box;
+    --primary-color: #420099;
+    --secondary-color: #ffd700;
+    --white-color: #fff;
+    --grey-color: #222222;
+}
+*{
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.loading{
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--secondary-color);
+        z-index: 9999;
+        justify-content: center;
+        align-items: center;
+}
+
+/* Animation for the preload */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.loading img{
+    width: 100px;
+    height: 100px;
+    animation: pulse 1s ease-in-out infinite;
+}
+
+/* Home page styles */
+#contentHolder{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100%;
+    gap: 10px;
+
+}
+.sidenav{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--primary-color);
+    width: 50px;
+}
+.topNav{
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+    gap: 20px;
+}
+.navImage{
+    width: 35px;
+    height: 35px;
+    color: var(--secondary-color);
+}
+.navImage:hover{
+    cursor: pointer;
+    background-color: var(--secondary-color);
+}
+.content{
+    display:flex;
+    flex-direction: row;
+}
+.today{
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+}
+#calendar table{
+    align-content: center;
+   border-spacing: 10px;
+}
