@@ -1,5 +1,6 @@
 import './styles/style.css';
 import './assets/home.png';
+import './assets/logo.png';
 import './assets/calendar.png';
 import './assets/projects.png';
 import './assets/add.png';
@@ -13,6 +14,9 @@ setTimeout(function() {
 }, 3000);
 
 home();
+
+
+
 /*
 Project Management: Functions to add, edit, and delete projects. This is crucial for organizing tasks.
 

@@ -36,10 +36,14 @@
         transform: scale(1);
     }
 }
+
 .loading img{
-    width: 100px;
-    height: 100px;
+    width: 250px;
     animation: pulse 1s ease-in-out infinite;
+}
+.loading h1{
+    color: var(--primary-color);
+    font-weight: bold;
 }
 
 /* Home page styles */
@@ -48,7 +52,6 @@
     flex-direction: row;
     height: 100vh;
     width: 100%;
-    gap: 10px;
 
 }
 .sidenav{
@@ -67,22 +70,165 @@
 }
 .navImage{
     width: 35px;
-    height: 35px;
-    color: var(--secondary-color);
+    height:35px;
+    background-size: cover;
 }
-.navImage:hover{
+.navImage:active{
     cursor: pointer;
-    background-color: var(--secondary-color);
 }
-.content{
+
+.sidenav #navHome{
+    content: url('../assets/home.png');
+    
+}
+.sidenav #navCalendar{
+    content:url('../assets/calendar.png');
+    
+}
+.sidenav #navProjects{
+    content:url('../assets/projects.png');
+}
+.sidenav #navAdd{
+    content:url('../assets/add.png');
+}
+.sidenav #navAbout{
+    content:url('../assets/about.png');
+}
+
+.sidenav #navHome:hover{
+    content:url('../assets/homehover.png');
+
+}
+.sidenav #navCalendar:hover{
+    content:url('../assets/calendarhover.png');
+  
+}
+.sidenav #navProjects:hover{
+    content:url('../assets/projectshover.png');
+
+}
+.sidenav #navAdd:hover{
+    content:url('../assets/addhover.png');
+   
+}
+.sidenav #navAbout:hover{
+    content:url('../assets/abouthover.png');
+   
+}
+#darkMode{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--white-color);
+}
+#darkMode p{
+    display: block;
+}
+.switch {
+    position:relative;
+    display: inline-block;
+    width: 40px;
+    height: 25px;
+  }
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute; 
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; 
+    background-color: #ccc;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 17px;
+    width: 17px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: var(--secondary-color);
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px var(--secondary-color);
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(15px);
+  }
+  .slider.round {
+    border-radius: 34px;
+  }
+  .slider.round:before {
+    border-radius: 50%;
+  }
+#homeContent{
+    color: var(--grey-color);
+    padding-left: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 25px;
+    width: 100%;
+    height: 100%;
+}
+
+#content{
     display:flex;
     flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 30px;
 }
-.today{
-    background-color: var(--secondary-color);
+
+
+#calendar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border:1px solid var(--primary-color);
     border-radius: 10px;
 }
+
 #calendar table{
     align-content: center;
    border-spacing: 10px;
+    border-collapse:collapse;
 }
+#calendar td{
+    padding: 10px;
+    text-align: center;
+}
+#calendar th{
+    padding: 10px;
+    text-align: center;
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+#calendar .today{
+    background-color: var(--secondary-color);
+    color: var(--grey-color);
+    border-radius: 50px;
+}
+
+#todayTasks{
+    border-radius: 10px;
+    border:1px solid var(--primary-color);}

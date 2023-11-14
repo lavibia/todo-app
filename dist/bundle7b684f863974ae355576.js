@@ -14,6 +14,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   getDaysInMonth: () => (/* binding */ getDaysInMonth),
 /* harmony export */   getFirstDay: () => (/* binding */ getFirstDay),
 /* harmony export */   getMonth: () => (/* binding */ getMonth),
+/* harmony export */   getMonthLetters: () => (/* binding */ getMonthLetters),
 /* harmony export */   getYear: () => (/* binding */ getYear)
 /* harmony export */ });
 function getMonth() {
@@ -23,6 +24,13 @@ function getMonth() {
   return month; // get the current month
 }
 
+function getMonthLetters() {
+  var date = new Date();
+  return date.toLocaleString('default', {
+    month: 'long'
+  });
+}
+;
 function getYear() {
   var date = new Date();
   var year = date.getFullYear();
@@ -73,12 +81,19 @@ function home() {
   createCalendar();
 }
 function createCalendar() {
+  var calendarDiv = document.getElementById('calendar');
   var month = (0,_calendar_js__WEBPACK_IMPORTED_MODULE_0__.getMonth)();
+  var monthLetters = (0,_calendar_js__WEBPACK_IMPORTED_MODULE_0__.getMonthLetters)();
   var year = (0,_calendar_js__WEBPACK_IMPORTED_MODULE_0__.getYear)();
   var firstDay = (0,_calendar_js__WEBPACK_IMPORTED_MODULE_0__.getFirstDay)(); // find what day of the week the first day of the month is
   var daysInMonth = (0,_calendar_js__WEBPACK_IMPORTED_MODULE_0__.getDaysInMonth)();
   var table = document.createElement('table');
 
+  //create the month and year header
+
+  var header = document.createElement('h2');
+  header.textContent = "".concat(monthLetters, " ").concat(year);
+  calendarDiv.appendChild(header);
   // create the days of the week headers
   var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   var headerRow = document.createElement('tr');
@@ -114,9 +129,8 @@ function createCalendar() {
     tr.appendChild(_td);
   }
   table.appendChild(tr);
-  var calendarDiv = document.getElementById('calendar');
-  // clear any existing content
-  calendarDiv.textContent = '';
+
+  //in the calendar div, append the table
   calendarDiv.appendChild(table);
 }
 
@@ -136,11 +150,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
 // Imports
 
 
+
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/home.png */ "./src/assets/home.png"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/calendar.png */ "./src/assets/calendar.png"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_2___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/projects.png */ "./src/assets/projects.png"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_3___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/add.png */ "./src/assets/add.png"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_4___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/about.png */ "./src/assets/about.png"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_5___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/homehover.png */ "./src/assets/homehover.png"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_6___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/calendarhover.png */ "./src/assets/calendarhover.png"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_7___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/projectshover.png */ "./src/assets/projectshover.png"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_8___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/addhover.png */ "./src/assets/addhover.png"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_9___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/abouthover.png */ "./src/assets/abouthover.png"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Nunito&family=Poppins:ital,wght@0,400;1,800&display=swap);"]);
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
+var ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_1___);
+var ___CSS_LOADER_URL_REPLACEMENT_2___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_2___);
+var ___CSS_LOADER_URL_REPLACEMENT_3___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_3___);
+var ___CSS_LOADER_URL_REPLACEMENT_4___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_4___);
+var ___CSS_LOADER_URL_REPLACEMENT_5___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_5___);
+var ___CSS_LOADER_URL_REPLACEMENT_6___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_6___);
+var ___CSS_LOADER_URL_REPLACEMENT_7___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_7___);
+var ___CSS_LOADER_URL_REPLACEMENT_8___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_8___);
+var ___CSS_LOADER_URL_REPLACEMENT_9___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_9___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `:root {
     box-sizing: border-box;
@@ -179,10 +216,14 @@ ___CSS_LOADER_EXPORT___.push([module.id, `:root {
         transform: scale(1);
     }
 }
+
 .loading img{
-    width: 100px;
-    height: 100px;
+    width: 250px;
     animation: pulse 1s ease-in-out infinite;
+}
+.loading h1{
+    color: var(--primary-color);
+    font-weight: bold;
 }
 
 /* Home page styles */
@@ -191,7 +232,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, `:root {
     flex-direction: row;
     height: 100vh;
     width: 100%;
-    gap: 10px;
 
 }
 .sidenav{
@@ -210,24 +250,168 @@ ___CSS_LOADER_EXPORT___.push([module.id, `:root {
 }
 .navImage{
     width: 35px;
-    height: 35px;
-    color: var(--secondary-color);
+    height:35px;
+    background-size: cover;
 }
-.navImage:hover{
+.navImage:active{
     cursor: pointer;
-    background-color: var(--secondary-color);
 }
-.content{
+
+.sidenav #navHome{
+    content: url(${___CSS_LOADER_URL_REPLACEMENT_0___});
+    
+}
+.sidenav #navCalendar{
+    content:url(${___CSS_LOADER_URL_REPLACEMENT_1___});
+    
+}
+.sidenav #navProjects{
+    content:url(${___CSS_LOADER_URL_REPLACEMENT_2___});
+}
+.sidenav #navAdd{
+    content:url(${___CSS_LOADER_URL_REPLACEMENT_3___});
+}
+.sidenav #navAbout{
+    content:url(${___CSS_LOADER_URL_REPLACEMENT_4___});
+}
+
+.sidenav #navHome:hover{
+    content:url(${___CSS_LOADER_URL_REPLACEMENT_5___});
+
+}
+.sidenav #navCalendar:hover{
+    content:url(${___CSS_LOADER_URL_REPLACEMENT_6___});
+  
+}
+.sidenav #navProjects:hover{
+    content:url(${___CSS_LOADER_URL_REPLACEMENT_7___});
+
+}
+.sidenav #navAdd:hover{
+    content:url(${___CSS_LOADER_URL_REPLACEMENT_8___});
+   
+}
+.sidenav #navAbout:hover{
+    content:url(${___CSS_LOADER_URL_REPLACEMENT_9___});
+   
+}
+#darkMode{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--white-color);
+}
+#darkMode p{
+    display: block;
+}
+.switch {
+    position:relative;
+    display: inline-block;
+    width: 40px;
+    height: 25px;
+  }
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute; 
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; 
+    background-color: #ccc;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 17px;
+    width: 17px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: var(--secondary-color);
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px var(--secondary-color);
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(15px);
+  }
+  .slider.round {
+    border-radius: 34px;
+  }
+  .slider.round:before {
+    border-radius: 50%;
+  }
+#homeContent{
+    color: var(--grey-color);
+    padding-left: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 25px;
+    width: 100%;
+    height: 100%;
+}
+
+#content{
     display:flex;
     flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 30px;
 }
-.today{
-    background-color: var(--secondary-color);
+
+
+#calendar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border:1px solid var(--primary-color);
     border-radius: 10px;
 }
+
 #calendar table{
+    align-content: center;
    border-spacing: 10px;
-}`, "",{"version":3,"sources":["webpack://./src/styles/style.css"],"names":[],"mappings":"AACA;IACI,sBAAsB;IACtB,wBAAwB;IACxB,0BAA0B;IAC1B,mBAAmB;IACnB,qBAAqB;AACzB;AACA;IACI,iCAAiC;IACjC,SAAS;IACT,UAAU;AACd;AACA;QACQ,aAAa;QACb,eAAe;QACf,MAAM;QACN,OAAO;QACP,WAAW;QACX,YAAY;QACZ,wCAAwC;QACxC,aAAa;QACb,uBAAuB;QACvB,mBAAmB;AAC3B;;AAEA,8BAA8B;AAC9B;IACI;QACI,mBAAmB;IACvB;IACA;QACI,qBAAqB;IACzB;IACA;QACI,mBAAmB;IACvB;AACJ;AACA;IACI,YAAY;IACZ,aAAa;IACb,wCAAwC;AAC5C;;AAEA,qBAAqB;AACrB;IACI,aAAa;IACb,mBAAmB;IACnB,aAAa;IACb,WAAW;IACX,SAAS;;AAEb;AACA;IACI,aAAa;IACb,sBAAsB;IACtB,6BAA6B;IAC7B,mBAAmB;IACnB,sCAAsC;IACtC,WAAW;AACf;AACA;IACI,aAAa;IACb,qBAAqB;IACrB,6BAA6B;IAC7B,SAAS;AACb;AACA;IACI,WAAW;IACX,YAAY;IACZ,6BAA6B;AACjC;AACA;IACI,eAAe;IACf,wCAAwC;AAC5C;AACA;IACI,YAAY;IACZ,mBAAmB;AACvB;AACA;IACI,wCAAwC;IACxC,mBAAmB;AACvB;AACA;GACG,oBAAoB;AACvB","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Poppins:ital,wght@0,400;1,800&display=swap');\n:root {\n    box-sizing: border-box;\n    --primary-color: #420099;\n    --secondary-color: #ffd700;\n    --white-color: #fff;\n    --grey-color: #222222;\n}\n*{\n    font-family: 'Nunito', sans-serif;\n    margin: 0;\n    padding: 0;\n}\n.loading{\n        display: flex;\n        position: fixed;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n        background-color: var(--secondary-color);\n        z-index: 9999;\n        justify-content: center;\n        align-items: center;\n}\n\n/* Animation for the preload */\n@keyframes pulse {\n    0% {\n        transform: scale(1);\n    }\n    50% {\n        transform: scale(1.2);\n    }\n    100% {\n        transform: scale(1);\n    }\n}\n.loading img{\n    width: 100px;\n    height: 100px;\n    animation: pulse 1s ease-in-out infinite;\n}\n\n/* Home page styles */\n#contentHolder{\n    display: flex;\n    flex-direction: row;\n    height: 100vh;\n    width: 100%;\n    gap: 10px;\n\n}\n.sidenav{\n    display: flex;\n    flex-direction: column;\n    justify-content: space-around;\n    align-items: center;\n    background-color: var(--primary-color);\n    width: 50px;\n}\n.topNav{\n    display: flex;\n    flex-direction:column;\n    justify-content: space-around;\n    gap: 20px;\n}\n.navImage{\n    width: 35px;\n    height: 35px;\n    color: var(--secondary-color);\n}\n.navImage:hover{\n    cursor: pointer;\n    background-color: var(--secondary-color);\n}\n.content{\n    display:flex;\n    flex-direction: row;\n}\n.today{\n    background-color: var(--secondary-color);\n    border-radius: 10px;\n}\n#calendar table{\n   border-spacing: 10px;\n}"],"sourceRoot":""}]);
+    border-collapse:collapse;
+}
+#calendar td{
+    padding: 10px;
+    text-align: center;
+}
+#calendar th{
+    padding: 10px;
+    text-align: center;
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+#calendar .today{
+    background-color: var(--secondary-color);
+    color: var(--grey-color);
+    border-radius: 50px;
+}
+
+#todayTasks{
+    border-radius: 10px;
+    border:1px solid var(--primary-color);}`, "",{"version":3,"sources":["webpack://./src/styles/style.css"],"names":[],"mappings":"AACA;IACI,sBAAsB;IACtB,wBAAwB;IACxB,0BAA0B;IAC1B,mBAAmB;IACnB,qBAAqB;AACzB;AACA;IACI,iCAAiC;IACjC,SAAS;IACT,UAAU;AACd;AACA;QACQ,aAAa;QACb,eAAe;QACf,MAAM;QACN,OAAO;QACP,WAAW;QACX,YAAY;QACZ,wCAAwC;QACxC,aAAa;QACb,uBAAuB;QACvB,mBAAmB;AAC3B;;AAEA,8BAA8B;AAC9B;IACI;QACI,mBAAmB;IACvB;IACA;QACI,qBAAqB;IACzB;IACA;QACI,mBAAmB;IACvB;AACJ;;AAEA;IACI,YAAY;IACZ,wCAAwC;AAC5C;AACA;IACI,2BAA2B;IAC3B,iBAAiB;AACrB;;AAEA,qBAAqB;AACrB;IACI,aAAa;IACb,mBAAmB;IACnB,aAAa;IACb,WAAW;;AAEf;AACA;IACI,aAAa;IACb,sBAAsB;IACtB,6BAA6B;IAC7B,mBAAmB;IACnB,sCAAsC;IACtC,WAAW;AACf;AACA;IACI,aAAa;IACb,qBAAqB;IACrB,6BAA6B;IAC7B,SAAS;AACb;AACA;IACI,WAAW;IACX,WAAW;IACX,sBAAsB;AAC1B;AACA;IACI,eAAe;AACnB;;AAEA;IACI,gDAAkC;;AAEtC;AACA;IACI,+CAAqC;;AAEzC;AACA;IACI,+CAAqC;AACzC;AACA;IACI,+CAAgC;AACpC;AACA;IACI,+CAAkC;AACtC;;AAEA;IACI,+CAAsC;;AAE1C;AACA;IACI,+CAA0C;;AAE9C;AACA;IACI,+CAA0C;;AAE9C;AACA;IACI,+CAAqC;;AAEzC;AACA;IACI,+CAAuC;;AAE3C;AACA;IACI,gBAAgB;IAChB,aAAa;IACb,sBAAsB;IACtB,uBAAuB;IACvB,mBAAmB;IACnB,yBAAyB;AAC7B;AACA;IACI,cAAc;AAClB;AACA;IACI,iBAAiB;IACjB,qBAAqB;IACrB,WAAW;IACX,YAAY;EACd;EACA;IACE,UAAU;IACV,QAAQ;IACR,SAAS;EACX;;EAEA;IACE,kBAAkB;IAClB,eAAe;IACf,MAAM;IACN,OAAO;IACP,QAAQ;IACR,SAAS;IACT,sBAAsB;IACtB,eAAe;EACjB;;EAEA;IACE,kBAAkB;IAClB,WAAW;IACX,YAAY;IACZ,WAAW;IACX,SAAS;IACT,WAAW;IACX,uBAAuB;IACvB,eAAe;EACjB;;EAEA;IACE,wCAAwC;EAC1C;;EAEA;IACE,0CAA0C;EAC5C;;EAEA;IACE,2BAA2B;EAC7B;EACA;IACE,mBAAmB;EACrB;EACA;IACE,kBAAkB;EACpB;AACF;IACI,wBAAwB;IACxB,iBAAiB;IACjB,aAAa;IACb,sBAAsB;IACtB,uBAAuB;IACvB,uBAAuB;IACvB,SAAS;IACT,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,YAAY;IACZ,mBAAmB;IACnB,6BAA6B;IAC7B,uBAAuB;IACvB,SAAS;AACb;;;AAGA;IACI,aAAa;IACb,sBAAsB;IACtB,uBAAuB;IACvB,mBAAmB;IACnB,SAAS;IACT,qCAAqC;IACrC,mBAAmB;AACvB;;AAEA;IACI,qBAAqB;GACtB,oBAAoB;IACnB,wBAAwB;AAC5B;AACA;IACI,aAAa;IACb,kBAAkB;AACtB;AACA;IACI,aAAa;IACb,kBAAkB;IAClB,yBAAyB;IACzB,sCAAsC;AAC1C;AACA;IACI,wCAAwC;IACxC,wBAAwB;IACxB,mBAAmB;AACvB;;AAEA;IACI,mBAAmB;IACnB,qCAAqC,CAAC","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Poppins:ital,wght@0,400;1,800&display=swap');\n:root {\n    box-sizing: border-box;\n    --primary-color: #420099;\n    --secondary-color: #ffd700;\n    --white-color: #fff;\n    --grey-color: #222222;\n}\n*{\n    font-family: 'Nunito', sans-serif;\n    margin: 0;\n    padding: 0;\n}\n.loading{\n        display: flex;\n        position: fixed;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n        background-color: var(--secondary-color);\n        z-index: 9999;\n        justify-content: center;\n        align-items: center;\n}\n\n/* Animation for the preload */\n@keyframes pulse {\n    0% {\n        transform: scale(1);\n    }\n    50% {\n        transform: scale(1.2);\n    }\n    100% {\n        transform: scale(1);\n    }\n}\n\n.loading img{\n    width: 250px;\n    animation: pulse 1s ease-in-out infinite;\n}\n.loading h1{\n    color: var(--primary-color);\n    font-weight: bold;\n}\n\n/* Home page styles */\n#contentHolder{\n    display: flex;\n    flex-direction: row;\n    height: 100vh;\n    width: 100%;\n\n}\n.sidenav{\n    display: flex;\n    flex-direction: column;\n    justify-content: space-around;\n    align-items: center;\n    background-color: var(--primary-color);\n    width: 50px;\n}\n.topNav{\n    display: flex;\n    flex-direction:column;\n    justify-content: space-around;\n    gap: 20px;\n}\n.navImage{\n    width: 35px;\n    height:35px;\n    background-size: cover;\n}\n.navImage:active{\n    cursor: pointer;\n}\n\n.sidenav #navHome{\n    content: url('../assets/home.png');\n    \n}\n.sidenav #navCalendar{\n    content:url('../assets/calendar.png');\n    \n}\n.sidenav #navProjects{\n    content:url('../assets/projects.png');\n}\n.sidenav #navAdd{\n    content:url('../assets/add.png');\n}\n.sidenav #navAbout{\n    content:url('../assets/about.png');\n}\n\n.sidenav #navHome:hover{\n    content:url('../assets/homehover.png');\n\n}\n.sidenav #navCalendar:hover{\n    content:url('../assets/calendarhover.png');\n  \n}\n.sidenav #navProjects:hover{\n    content:url('../assets/projectshover.png');\n\n}\n.sidenav #navAdd:hover{\n    content:url('../assets/addhover.png');\n   \n}\n.sidenav #navAbout:hover{\n    content:url('../assets/abouthover.png');\n   \n}\n#darkMode{\n    margin-top: 20px;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    color: var(--white-color);\n}\n#darkMode p{\n    display: block;\n}\n.switch {\n    position:relative;\n    display: inline-block;\n    width: 40px;\n    height: 25px;\n  }\n  .switch input { \n    opacity: 0;\n    width: 0;\n    height: 0;\n  }\n  \n  .slider {\n    position: absolute; \n    cursor: pointer;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0; \n    background-color: #ccc;\n    transition: .4s;\n  }\n  \n  .slider:before {\n    position: absolute;\n    content: \"\";\n    height: 17px;\n    width: 17px;\n    left: 4px;\n    bottom: 4px;\n    background-color: white;\n    transition: .4s;\n  }\n  \n  input:checked + .slider {\n    background-color: var(--secondary-color);\n  }\n  \n  input:focus + .slider {\n    box-shadow: 0 0 1px var(--secondary-color);\n  }\n  \n  input:checked + .slider:before {\n    transform: translateX(15px);\n  }\n  .slider.round {\n    border-radius: 34px;\n  }\n  .slider.round:before {\n    border-radius: 50%;\n  }\n#homeContent{\n    color: var(--grey-color);\n    padding-left: 10%;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: flex-start;\n    gap: 25px;\n    width: 100%;\n    height: 100%;\n}\n\n#content{\n    display:flex;\n    flex-direction: row;\n    justify-content: space-around;\n    align-items: flex-start;\n    gap: 30px;\n}\n\n\n#calendar{\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    gap: 10px;\n    border:1px solid var(--primary-color);\n    border-radius: 10px;\n}\n\n#calendar table{\n    align-content: center;\n   border-spacing: 10px;\n    border-collapse:collapse;\n}\n#calendar td{\n    padding: 10px;\n    text-align: center;\n}\n#calendar th{\n    padding: 10px;\n    text-align: center;\n    color: var(--white-color);\n    background-color: var(--primary-color);\n}\n#calendar .today{\n    background-color: var(--secondary-color);\n    color: var(--grey-color);\n    border-radius: 50px;\n}\n\n#todayTasks{\n    border-radius: 10px;\n    border:1px solid var(--primary-color);}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -324,6 +508,41 @@ module.exports = function (cssWithMappingToString) {
     }
   };
   return list;
+};
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/getUrl.js":
+/*!********************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
+  \********************************************************/
+/***/ ((module) => {
+
+
+
+module.exports = function (url, options) {
+  if (!options) {
+    options = {};
+  }
+  if (!url) {
+    return url;
+  }
+  url = String(url.__esModule ? url.default : url);
+
+  // If url is already wrapped in quotes, remove them
+  if (/^['"].*['"]$/.test(url)) {
+    url = url.slice(1, -1);
+  }
+  if (options.hash) {
+    url += options.hash;
+  }
+
+  // Should url be wrapped?
+  // See https://drafts.csswg.org/css-values-3/#urls
+  if (/["'() \t\n]|(%20)/.test(url) || options.needQuotes) {
+    return "\"".concat(url.replace(/"/g, '\\"').replace(/\n/g, "\\n"), "\"");
+  }
+  return url;
 };
 
 /***/ }),
@@ -684,6 +903,16 @@ module.exports = __webpack_require__.p + "about.png";
 
 /***/ }),
 
+/***/ "./src/assets/abouthover.png":
+/*!***********************************!*\
+  !*** ./src/assets/abouthover.png ***!
+  \***********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "abouthover.png";
+
+/***/ }),
+
 /***/ "./src/assets/add.png":
 /*!****************************!*\
   !*** ./src/assets/add.png ***!
@@ -691,6 +920,16 @@ module.exports = __webpack_require__.p + "about.png";
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__.p + "add.png";
+
+/***/ }),
+
+/***/ "./src/assets/addhover.png":
+/*!*********************************!*\
+  !*** ./src/assets/addhover.png ***!
+  \*********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "addhover.png";
 
 /***/ }),
 
@@ -704,6 +943,16 @@ module.exports = __webpack_require__.p + "calendar.png";
 
 /***/ }),
 
+/***/ "./src/assets/calendarhover.png":
+/*!**************************************!*\
+  !*** ./src/assets/calendarhover.png ***!
+  \**************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "calendarhover.png";
+
+/***/ }),
+
 /***/ "./src/assets/home.png":
 /*!*****************************!*\
   !*** ./src/assets/home.png ***!
@@ -714,6 +963,26 @@ module.exports = __webpack_require__.p + "home.png";
 
 /***/ }),
 
+/***/ "./src/assets/homehover.png":
+/*!**********************************!*\
+  !*** ./src/assets/homehover.png ***!
+  \**********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "homehover.png";
+
+/***/ }),
+
+/***/ "./src/assets/logo.png":
+/*!*****************************!*\
+  !*** ./src/assets/logo.png ***!
+  \*****************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "logo.png";
+
+/***/ }),
+
 /***/ "./src/assets/projects.png":
 /*!*********************************!*\
   !*** ./src/assets/projects.png ***!
@@ -721,6 +990,16 @@ module.exports = __webpack_require__.p + "home.png";
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__.p + "projects.png";
+
+/***/ }),
+
+/***/ "./src/assets/projectshover.png":
+/*!**************************************!*\
+  !*** ./src/assets/projectshover.png ***!
+  \**************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "projectshover.png";
 
 /***/ })
 
@@ -749,6 +1028,9 @@ module.exports = __webpack_require__.p + "projects.png";
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
+/******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
 /******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
@@ -826,6 +1108,32 @@ module.exports = __webpack_require__.p + "projects.png";
 /******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		__webpack_require__.b = document.baseURI || self.location.href;
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"bundle": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		// no on chunks loaded
+/******/ 		
+/******/ 		// no jsonp function
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/nonce */
 /******/ 	(() => {
 /******/ 		__webpack_require__.nc = undefined;
@@ -841,11 +1149,13 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/style.css */ "./src/styles/style.css");
 /* harmony import */ var _assets_home_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/home.png */ "./src/assets/home.png");
-/* harmony import */ var _assets_calendar_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/calendar.png */ "./src/assets/calendar.png");
-/* harmony import */ var _assets_projects_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./assets/projects.png */ "./src/assets/projects.png");
-/* harmony import */ var _assets_add_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./assets/add.png */ "./src/assets/add.png");
-/* harmony import */ var _assets_about_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./assets/about.png */ "./src/assets/about.png");
-/* harmony import */ var _home_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./home.js */ "./src/home.js");
+/* harmony import */ var _assets_logo_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/logo.png */ "./src/assets/logo.png");
+/* harmony import */ var _assets_calendar_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./assets/calendar.png */ "./src/assets/calendar.png");
+/* harmony import */ var _assets_projects_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./assets/projects.png */ "./src/assets/projects.png");
+/* harmony import */ var _assets_add_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./assets/add.png */ "./src/assets/add.png");
+/* harmony import */ var _assets_about_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./assets/about.png */ "./src/assets/about.png");
+/* harmony import */ var _home_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./home.js */ "./src/home.js");
+
 
 
 
@@ -857,7 +1167,8 @@ console.log('test');
 setTimeout(function () {
   document.getElementById('loading').style.display = 'none';
 }, 3000);
-(0,_home_js__WEBPACK_IMPORTED_MODULE_6__["default"])();
+(0,_home_js__WEBPACK_IMPORTED_MODULE_7__["default"])();
+
 /*
 Project Management: Functions to add, edit, and delete projects. This is crucial for organizing tasks.
 
@@ -1011,4 +1322,4 @@ module.exports = {
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle0d2305b4261b240534cc.js.map
+//# sourceMappingURL=bundle7b684f863974ae355576.js.map

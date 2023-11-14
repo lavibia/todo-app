@@ -8,21 +8,30 @@
 </head>
 <body>
 <div class="loading" id="loading">
-    <img src="https://img.icons8.com/stickers/500/checked-2.png" alt="Loading">
+    <img src="logo.png" alt="Loading">
+    <h1>TASKHUB</h1>
 </div>
 <div id="contentHolder">
     <div class="sidenav" id="sidenav">
         <div class="topNav">
-            <a href="index.html"><img class="navImage" src="home.png" alt="Home"></a>
-            <a href="calendar.html"><img class="navImage" src="calendar.png" alt="Calendar"></a>
-            <a href="projects.html"><img class="navImage" src="projects.png" alt="Projects"></a>
-            <a href="addTask.html"><img class="navImage" src="add.png" alt="Add Task"></a>
+            <a href="home.html"><div id='navHome' class="navImage"></div></a>
+            <a href="calendar.html"><div id="navCalendar" class="navImage" ></div></a>
+            <a href="projects.html"><div id="navProjects" class="navImage"></div></a>
+            <a href="task.html"><div id="navAdd" class="navImage"></div></a>
         </div>        
         <div class="bottomNav">
-            <a href="about.html"><img class="navImage" src="about.png" alt="About"></a>
+            <a href="about.html"><div id="navAbout" class="navImage"></div></a>
+            <div id="darkMode">
+                <p>Dark</p>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                  </label>
+            </div>
         </div>
     </div>
-    <div class="homeContent" id="nomeContent">
+
+    <div class="homeContent" id="homeContent">
         <div id="header">
             <h1>Welcome!</h1>
             <h3>Here is your agenda for today</h3>
@@ -32,7 +41,7 @@
 
             </div>
             <div id="todayTasks">
-
+Urgent Tasks:
             </div>
         </div>
 

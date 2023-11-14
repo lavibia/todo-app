@@ -4,6 +4,10 @@ export function getMonth() {
     console.log("Month: ", month);
     return month; // get the current month
 }
+export function getMonthLetters(){
+    const date = new Date();
+    return date.toLocaleString('default', { month: 'long' });
+};
 
 export function getYear() {
     const date = new Date();

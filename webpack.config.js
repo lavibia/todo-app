@@ -52,10 +52,30 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'To Do List',
+            title: 'TaskHub',
             filename: 'home.html',
             template: 'src/template.html',
 
+        }),
+        new HtmlWebpackPlugin({
+            title: 'TaskHub',
+            filename: 'calendar.html',
+            template: 'src/calendar.html',
+        }),
+        new HtmlWebpackPlugin({
+            title: 'TaskHub',
+            filename: 'projects.html',
+            template: 'src/projects.html',
+        }),
+        new HtmlWebpackPlugin({
+            title: 'TaskHub',
+            filename: 'task.html',
+            template: 'src/task.html',
+        }),
+        new HtmlWebpackPlugin({
+            title: 'TaskHub',
+            filename: 'about.html',
+            template: 'src/about.html',
         }),
     ],
 

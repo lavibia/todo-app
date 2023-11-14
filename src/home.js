@@ -1,6 +1,6 @@
 // Purpose: Home page functionality
 
-import { getMonth, getYear, getFirstDay, getDaysInMonth } from './calendar.js';
+import { getMonth,getMonthLetters, getYear, getFirstDay, getDaysInMonth } from './calendar.js';
 import getToday from './calendar.js';
 
 export default function home() {
@@ -8,13 +8,20 @@ export default function home() {
 }
    
 function createCalendar() {
+    const calendarDiv = document.getElementById('calendar');
     const month = getMonth(); 
+    const monthLetters= getMonthLetters();
     const year = getYear(); 
     const firstDay = getFirstDay(); // find what day of the week the first day of the month is
     const daysInMonth = getDaysInMonth();
 
     const table = document.createElement('table');
 
+    //create the month and year header
+
+    const header = document.createElement('h2');
+    header.textContent = `${monthLetters} ${year}`;
+    calendarDiv.appendChild(header);
     // create the days of the week headers
     const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     const headerRow = document.createElement('tr');
@@ -53,8 +60,7 @@ function createCalendar() {
 
     table.appendChild(tr);
 
-    const calendarDiv = document.getElementById('calendar');
-    // clear any existing content
-    calendarDiv.textContent = '';
+   
+    //in the calendar div, append the table
     calendarDiv.appendChild(table);
 }
